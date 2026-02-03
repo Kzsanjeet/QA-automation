@@ -1,16 +1,18 @@
-name: EasyPR API Tests
+name: EasyPR Tests
 
 on:
   push:
     branches:
       - main
       - qa
+      - master
   pull_request:
     branches:
       - main
+      - master
 
 jobs:
-  api-tests:
+  tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +31,6 @@ jobs:
         run: |
           npx newman run postman/collections/easypr.collection.json \
             -e postman/environments/easypr.env.json
+
+      - name: Run Cypress tests
+        run: npx cypress run
