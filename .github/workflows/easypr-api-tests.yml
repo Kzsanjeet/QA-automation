@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Install Cypress Binary
+        run: npx cypress install
+
       - name: Run API tests with Newman
         run: |
           npx newman run postman/collections/easypr.collection.json \
