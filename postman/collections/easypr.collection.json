@@ -1,0 +1,732 @@
+{
+  "info": {
+    "_postman_id": "bde319f8-8fd5-4609-b57b-389fdcc401d6",
+    "name": "EasyPR",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31429123",
+    "_collection_link": "https://grey-comet-98163.postman.co/workspace/EasyPR-Workspace~116416c7-39f1-40eb-9f5e-b6cd7b887126/collection/19134834-bde319f8-8fd5-4609-b57b-389fdcc401d6?action=share&source=collection_link&creator=31429123"
+  },
+  "item": [
+    {
+      "name": "Newsletter",
+      "item": [
+        {
+          "name": "/subscribe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "ashwinshrestha900@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/newsletter/subscribe",
+              "host": ["{{baseURL}}"],
+              "path": ["api", "newsletter", "subscribe"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/unsubscribe/{token}",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseURL}}/api/newsletter/unsubscribe/{emailToken}",
+              "host": ["{{baseURL}}"],
+              "path": ["api", "newsletter", "unsubscribe", "{emailToken}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Get Blogs",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/blogs",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "blogs"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Blogs",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/all-blogs",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "all-blogs"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Blog",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/blogs/boilerplate-in-press-release",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "blogs", "boilerplate-in-press-release"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Blog View",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "slug",
+              "value": "test-blog",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/blogs/update-view",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "blogs", "update-view"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Contact Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "full_name",
+              "value": "Test User",
+              "type": "text"
+            },
+            {
+              "key": "email_address\n",
+              "value": "test@example.com",
+              "type": "text"
+            },
+            {
+              "key": "telegram_whatsapp",
+              "value": "+977 1234567890",
+              "type": "text"
+            },
+            {
+              "key": "website_url",
+              "value": "https://www.test.com/",
+              "description": "Optional",
+              "type": "text"
+            },
+            {
+              "key": "message",
+              "value": "Test message",
+              "type": "text"
+            },
+            {
+              "key": "source",
+              "value": "manual_entry",
+              "description": "manual_entry|contact|landing_page (Optional)",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/contacts",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "contacts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Thrivecart Order Webhook",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 948c48c93650ac4cd42b081436c7678a7ce840103d7148fe3247091fd0642418020914ef410fd2bc310926fe68693086b7426a1b716f77ec93663874ebd6432e42d916113419a21574c21fd5283b7b518ac42d06e9638617b5754fde1361bad7c343c09836e4afec07f618bb11966677229c7d589c2828c076ca115d90377579",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"event\": \"order.success\",\r\n    \"mode\": \"test\",\r\n    \"mode_int\": \"1\",\r\n    \"thrivecart_account\": \"easyprwire\",\r\n    \"thrivecart_secret\": \"SG8YZDLGIGKG\",\r\n    \"base_product\": \"8\",\r\n    \"base_product_name\": \"Test\",\r\n    \"base_product_label\": \"Entry-level press release distribution\",\r\n    \"base_product_owner\": \"413182\",\r\n    \"order_id\": \"382943556\",\r\n    \"invoice_id\": \"000000079\",\r\n    \"subscription_ids\": [],\r\n    \"order_date\": \"2025-11-08 10:54:48\",\r\n    \"order_timestamp\": \"1762599288\",\r\n    \"currency\": \"USD\",\r\n    \"customer_id\": \"429583657867255901\",\r\n    \"customer_identifier\": \"null\",\r\n    \"customer\": {\r\n        \"id\": \"429583657867255901\",\r\n        \"client_user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\",\r\n        \"client_meta_fbp\": \"fb.1.1750344664860.435670353999815701\",\r\n        \"origin\": \"vanity\",\r\n        \"email\": \"test5@test.com\",\r\n        \"custom_fields\": {\r\n            \"website\": \"https://www.test.com\",\r\n            \"representative-name\": \"Test User\"\r\n        },\r\n        \"tandc\": \"1\",\r\n        \"ip_address\": \"27.34.64.49\",\r\n        \"address\": {\r\n            \"country\": \"NP\"\r\n        },\r\n        \"name\": null,\r\n        \"checkbox_confirmation\": \"false\",\r\n        \"first_name\": null,\r\n        \"last_name\": null\r\n    },\r\n    \"affiliate\": \"null\",\r\n    \"order\": {\r\n        \"id\": \"38294355\",\r\n        \"invoice_id\": \"000000079\",\r\n        \"processor\": \"stripe_connect+\",\r\n        \"total\": \"9900\",\r\n        \"total_str\": \"99.00\",\r\n        \"total_gross\": \"9900\",\r\n        \"total_gross_str\": \"99.00\",\r\n        \"date\": \"2025-11-08 10:54:48\",\r\n        \"date_iso8601\": \"2025-11-08T10:54:48+00:00\",\r\n        \"date_unix\": \"1762599288\",\r\n        \"tracking_id\": \"null\",\r\n        \"tax\": \"null\",\r\n        \"payment_method\": \"card\",\r\n        \"charges\": [\r\n            {\r\n                \"name\": \"Test\",\r\n                \"label\": \"Entry-level press release distribution\",\r\n                \"reference\": \"8\",\r\n                \"item_type\": \"product\",\r\n                \"item_identifier\": \"product_8\",\r\n                \"amount\": \"9900\",\r\n                \"amount_str\": \"99.00\",\r\n                \"original_amount\": \"9900\",\r\n                \"original_amount_str\": \"99.00\",\r\n                \"type\": \"single\",\r\n                \"quantity\": \"1\",\r\n                \"unit_price\": \"9900\",\r\n                \"unit_price_str\": \"99.00\",\r\n                \"defer\": \"false\",\r\n                \"amount_gross\": \"9900\",\r\n                \"amount_gross_str\": \"99.00\",\r\n                \"tax_paid\": \"0\",\r\n                \"tax_paid_str\": \"0.00\",\r\n                \"payment_plan_id\": \"81156\",\r\n                \"payment_plan_name\": \"One-time payment ($99.00)\",\r\n                \"event_id\": \"1338138064\"\r\n            }\r\n        ],\r\n        \"future_charges\": []\r\n    },\r\n    \"transactions\": {\r\n        \"product-8\": \"ch_3SR9n4RIGpqxveRk1MZLjGTU6\"\r\n    },\r\n    \"subscriptions\": [],\r\n    \"purchases\": [\r\n        \"Test\"\r\n    ],\r\n    \"purchase_map\": [\r\n        \"product-8\"\r\n    ],\r\n    \"purchase_map_flat\": \"product-8\",\r\n    \"accessible_purchases\": [\r\n        \"Test\"\r\n    ],\r\n    \"accessible_purchase_map\": [\r\n        \"product-8\"\r\n    ],\r\n    \"accessible_purchase_map_flat\": \"product-8\",\r\n    \"fulfillment\": {\r\n        \"url\": \"https://orders.easyprwire.com/test/confirm/5f6d6b7467bd86d547a0f42ba1fe5f65d4d72e443483/\"\r\n    },\r\n    \"event_id\": \"1338138061\",\r\n    \"pro-rata\": \"false\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/thrivecart/webhook",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "thrivecart", "webhook"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/orders/ORDER_16753398",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "orders", "ORDER_16753398"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Newsrooms",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 948c48c93650ac4cd42b081436c7678a7ce840103d7148fe3247091fd0642418020914ef410fd2bc310926fe68693086b7426a1b716f77ec93663874ebd6432e42d916113419a21574c21fd5283b7b518ac42d06e9638617b5754fde1361bad7c343c09836e4afec07f618bb11966677229c7d589c2828c076ca115d90377579",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"event\": \"order.success\",\r\n        \"mode\": \"test\",\r\n        \"mode_int\": \"1\",\r\n        \"thrivecart_account\": \"easyprwire\",\r\n        \"thrivecart_secret\": \"SG8YZDLGIGKG\",\r\n        \"base_product\": \"8\",\r\n        \"base_product_name\": \"Test\",\r\n        \"base_product_label\": \"Entry-level press release distribution\",\r\n        \"base_product_owner\": \"413182\",\r\n        \"order_id\": \"3829435Test\",\r\n        \"invoice_id\": \"000000079\",\r\n        \"subscription_ids\": [],\r\n        \"order_date\": \"2025-11-08 10:54:48\",\r\n        \"order_timestamp\": \"1762599288\",\r\n        \"currency\": \"USD\",\r\n        \"customer_id\": \"429583657867255901\",\r\n        \"customer_identifier\": \"null\",\r\n        \"customer\": {\r\n            \"id\": \"429583657867255901\",\r\n            \"client_user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\",\r\n            \"client_meta_fbp\": \"fb.1.1750344664860.435670353999815701\",\r\n            \"origin\": \"vanity\",\r\n            \"email\": \"test5@test.com\",\r\n            \"custom_fields\": {\r\n                \"website\": \"https://www.test.com\",\r\n                \"representative-name\": \"Test User\"\r\n            },\r\n            \"tandc\": \"1\",\r\n            \"ip_address\": \"27.34.64.49\",\r\n            \"address\": {\r\n                \"country\": \"NP\"\r\n            },\r\n            \"name\": null,\r\n            \"checkbox_confirmation\": \"false\",\r\n            \"first_name\": null,\r\n            \"last_name\": null\r\n        },\r\n        \"affiliate\": \"null\",\r\n        \"order\": {\r\n            \"id\": \"38294355\",\r\n            \"invoice_id\": \"000000079\",\r\n            \"processor\": \"stripe_connect+\",\r\n            \"total\": \"9900\",\r\n            \"total_str\": \"99.00\",\r\n            \"total_gross\": \"9900\",\r\n            \"total_gross_str\": \"99.00\",\r\n            \"date\": \"2025-11-08 10:54:48\",\r\n            \"date_iso8601\": \"2025-11-08T10:54:48+00:00\",\r\n            \"date_unix\": \"1762599288\",\r\n            \"tracking_id\": \"null\",\r\n            \"tax\": \"null\",\r\n            \"payment_method\": \"card\",\r\n            \"charges\": [\r\n                {\r\n                    \"name\": \"Test\",\r\n                    \"label\": \"Entry-level press release distribution\",\r\n                    \"reference\": \"8\",\r\n                    \"item_type\": \"product\",\r\n                    \"item_identifier\": \"product_8\",\r\n                    \"amount\": \"9900\",\r\n                    \"amount_str\": \"99.00\",\r\n                    \"original_amount\": \"9900\",\r\n                    \"original_amount_str\": \"99.00\",\r\n                    \"type\": \"single\",\r\n                    \"quantity\": \"1\",\r\n                    \"unit_price\": \"9900\",\r\n                    \"unit_price_str\": \"99.00\",\r\n                    \"defer\": \"false\",\r\n                    \"amount_gross\": \"9900\",\r\n                    \"amount_gross_str\": \"99.00\",\r\n                    \"tax_paid\": \"0\",\r\n                    \"tax_paid_str\": \"0.00\",\r\n                    \"payment_plan_id\": \"81156\",\r\n                    \"payment_plan_name\": \"One-time payment ($99.00)\",\r\n                    \"event_id\": \"1338138064\"\r\n                }\r\n            ],\r\n            \"future_charges\": []\r\n        },\r\n        \"transactions\": {\r\n            \"product-8\": \"ch_3SR9n4RIGpqxveRk1MZLjGTU_TEST\"\r\n        },\r\n        \"subscriptions\": [],\r\n        \"purchases\": [\r\n            \"Test\"\r\n        ],\r\n        \"purchase_map\": [\r\n            \"product-8\"\r\n        ],\r\n        \"purchase_map_flat\": \"product-8\",\r\n        \"accessible_purchases\": [\r\n            \"Test\"\r\n        ],\r\n        \"accessible_purchase_map\": [\r\n            \"product-8\"\r\n        ],\r\n        \"accessible_purchase_map_flat\": \"product-8\",\r\n        \"fulfillment\": {\r\n            \"url\": \"https://orders.easyprwire.com/test/confirm/5f6d6b7467bd86d547a0f42ba1fe5f65d4d72e443483/\"\r\n        },\r\n        \"event_id\": \"1338138061\",\r\n        \"pro-rata\": \"false\"\r\n    }"
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/newsrooms",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "newsrooms"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All News",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 948c48c93650ac4cd42b081436c7678a7ce840103d7148fe3247091fd0642418020914ef410fd2bc310926fe68693086b7426a1b716f77ec93663874ebd6432e42d916113419a21574c21fd5283b7b518ac42d06e9638617b5754fde1361bad7c343c09836e4afec07f618bb11966677229c7d589c2828c076ca115d90377579",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"event\": \"order.success\",\r\n        \"mode\": \"test\",\r\n        \"mode_int\": \"1\",\r\n        \"thrivecart_account\": \"easyprwire\",\r\n        \"thrivecart_secret\": \"SG8YZDLGIGKG\",\r\n        \"base_product\": \"8\",\r\n        \"base_product_name\": \"Test\",\r\n        \"base_product_label\": \"Entry-level press release distribution\",\r\n        \"base_product_owner\": \"413182\",\r\n        \"order_id\": \"3829435Test\",\r\n        \"invoice_id\": \"000000079\",\r\n        \"subscription_ids\": [],\r\n        \"order_date\": \"2025-11-08 10:54:48\",\r\n        \"order_timestamp\": \"1762599288\",\r\n        \"currency\": \"USD\",\r\n        \"customer_id\": \"429583657867255901\",\r\n        \"customer_identifier\": \"null\",\r\n        \"customer\": {\r\n            \"id\": \"429583657867255901\",\r\n            \"client_user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\",\r\n            \"client_meta_fbp\": \"fb.1.1750344664860.435670353999815701\",\r\n            \"origin\": \"vanity\",\r\n            \"email\": \"test5@test.com\",\r\n            \"custom_fields\": {\r\n                \"website\": \"https://www.test.com\",\r\n                \"representative-name\": \"Test User\"\r\n            },\r\n            \"tandc\": \"1\",\r\n            \"ip_address\": \"27.34.64.49\",\r\n            \"address\": {\r\n                \"country\": \"NP\"\r\n            },\r\n            \"name\": null,\r\n            \"checkbox_confirmation\": \"false\",\r\n            \"first_name\": null,\r\n            \"last_name\": null\r\n        },\r\n        \"affiliate\": \"null\",\r\n        \"order\": {\r\n            \"id\": \"38294355\",\r\n            \"invoice_id\": \"000000079\",\r\n            \"processor\": \"stripe_connect+\",\r\n            \"total\": \"9900\",\r\n            \"total_str\": \"99.00\",\r\n            \"total_gross\": \"9900\",\r\n            \"total_gross_str\": \"99.00\",\r\n            \"date\": \"2025-11-08 10:54:48\",\r\n            \"date_iso8601\": \"2025-11-08T10:54:48+00:00\",\r\n            \"date_unix\": \"1762599288\",\r\n            \"tracking_id\": \"null\",\r\n            \"tax\": \"null\",\r\n            \"payment_method\": \"card\",\r\n            \"charges\": [\r\n                {\r\n                    \"name\": \"Test\",\r\n                    \"label\": \"Entry-level press release distribution\",\r\n                    \"reference\": \"8\",\r\n                    \"item_type\": \"product\",\r\n                    \"item_identifier\": \"product_8\",\r\n                    \"amount\": \"9900\",\r\n                    \"amount_str\": \"99.00\",\r\n                    \"original_amount\": \"9900\",\r\n                    \"original_amount_str\": \"99.00\",\r\n                    \"type\": \"single\",\r\n                    \"quantity\": \"1\",\r\n                    \"unit_price\": \"9900\",\r\n                    \"unit_price_str\": \"99.00\",\r\n                    \"defer\": \"false\",\r\n                    \"amount_gross\": \"9900\",\r\n                    \"amount_gross_str\": \"99.00\",\r\n                    \"tax_paid\": \"0\",\r\n                    \"tax_paid_str\": \"0.00\",\r\n                    \"payment_plan_id\": \"81156\",\r\n                    \"payment_plan_name\": \"One-time payment ($99.00)\",\r\n                    \"event_id\": \"1338138064\"\r\n                }\r\n            ],\r\n            \"future_charges\": []\r\n        },\r\n        \"transactions\": {\r\n            \"product-8\": \"ch_3SR9n4RIGpqxveRk1MZLjGTU_TEST\"\r\n        },\r\n        \"subscriptions\": [],\r\n        \"purchases\": [\r\n            \"Test\"\r\n        ],\r\n        \"purchase_map\": [\r\n            \"product-8\"\r\n        ],\r\n        \"purchase_map_flat\": \"product-8\",\r\n        \"accessible_purchases\": [\r\n            \"Test\"\r\n        ],\r\n        \"accessible_purchase_map\": [\r\n            \"product-8\"\r\n        ],\r\n        \"accessible_purchase_map_flat\": \"product-8\",\r\n        \"fulfillment\": {\r\n            \"url\": \"https://orders.easyprwire.com/test/confirm/5f6d6b7467bd86d547a0f42ba1fe5f65d4d72e443483/\"\r\n        },\r\n        \"event_id\": \"1338138061\",\r\n        \"pro-rata\": \"false\"\r\n    }"
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/all-news",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "all-news"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single News",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 948c48c93650ac4cd42b081436c7678a7ce840103d7148fe3247091fd0642418020914ef410fd2bc310926fe68693086b7426a1b716f77ec93663874ebd6432e42d916113419a21574c21fd5283b7b518ac42d06e9638617b5754fde1361bad7c343c09836e4afec07f618bb11966677229c7d589c2828c076ca115d90377579",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"event\": \"order.success\",\r\n        \"mode\": \"test\",\r\n        \"mode_int\": \"1\",\r\n        \"thrivecart_account\": \"easyprwire\",\r\n        \"thrivecart_secret\": \"SG8YZDLGIGKG\",\r\n        \"base_product\": \"8\",\r\n        \"base_product_name\": \"Test\",\r\n        \"base_product_label\": \"Entry-level press release distribution\",\r\n        \"base_product_owner\": \"413182\",\r\n        \"order_id\": \"3829435Test\",\r\n        \"invoice_id\": \"000000079\",\r\n        \"subscription_ids\": [],\r\n        \"order_date\": \"2025-11-08 10:54:48\",\r\n        \"order_timestamp\": \"1762599288\",\r\n        \"currency\": \"USD\",\r\n        \"customer_id\": \"429583657867255901\",\r\n        \"customer_identifier\": \"null\",\r\n        \"customer\": {\r\n            \"id\": \"429583657867255901\",\r\n            \"client_user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\",\r\n            \"client_meta_fbp\": \"fb.1.1750344664860.435670353999815701\",\r\n            \"origin\": \"vanity\",\r\n            \"email\": \"test5@test.com\",\r\n            \"custom_fields\": {\r\n                \"website\": \"https://www.test.com\",\r\n                \"representative-name\": \"Test User\"\r\n            },\r\n            \"tandc\": \"1\",\r\n            \"ip_address\": \"27.34.64.49\",\r\n            \"address\": {\r\n                \"country\": \"NP\"\r\n            },\r\n            \"name\": null,\r\n            \"checkbox_confirmation\": \"false\",\r\n            \"first_name\": null,\r\n            \"last_name\": null\r\n        },\r\n        \"affiliate\": \"null\",\r\n        \"order\": {\r\n            \"id\": \"38294355\",\r\n            \"invoice_id\": \"000000079\",\r\n            \"processor\": \"stripe_connect+\",\r\n            \"total\": \"9900\",\r\n            \"total_str\": \"99.00\",\r\n            \"total_gross\": \"9900\",\r\n            \"total_gross_str\": \"99.00\",\r\n            \"date\": \"2025-11-08 10:54:48\",\r\n            \"date_iso8601\": \"2025-11-08T10:54:48+00:00\",\r\n            \"date_unix\": \"1762599288\",\r\n            \"tracking_id\": \"null\",\r\n            \"tax\": \"null\",\r\n            \"payment_method\": \"card\",\r\n            \"charges\": [\r\n                {\r\n                    \"name\": \"Test\",\r\n                    \"label\": \"Entry-level press release distribution\",\r\n                    \"reference\": \"8\",\r\n                    \"item_type\": \"product\",\r\n                    \"item_identifier\": \"product_8\",\r\n                    \"amount\": \"9900\",\r\n                    \"amount_str\": \"99.00\",\r\n                    \"original_amount\": \"9900\",\r\n                    \"original_amount_str\": \"99.00\",\r\n                    \"type\": \"single\",\r\n                    \"quantity\": \"1\",\r\n                    \"unit_price\": \"9900\",\r\n                    \"unit_price_str\": \"99.00\",\r\n                    \"defer\": \"false\",\r\n                    \"amount_gross\": \"9900\",\r\n                    \"amount_gross_str\": \"99.00\",\r\n                    \"tax_paid\": \"0\",\r\n                    \"tax_paid_str\": \"0.00\",\r\n                    \"payment_plan_id\": \"81156\",\r\n                    \"payment_plan_name\": \"One-time payment ($99.00)\",\r\n                    \"event_id\": \"1338138064\"\r\n                }\r\n            ],\r\n            \"future_charges\": []\r\n        },\r\n        \"transactions\": {\r\n            \"product-8\": \"ch_3SR9n4RIGpqxveRk1MZLjGTU_TEST\"\r\n        },\r\n        \"subscriptions\": [],\r\n        \"purchases\": [\r\n            \"Test\"\r\n        ],\r\n        \"purchase_map\": [\r\n            \"product-8\"\r\n        ],\r\n        \"purchase_map_flat\": \"product-8\",\r\n        \"accessible_purchases\": [\r\n            \"Test\"\r\n        ],\r\n        \"accessible_purchase_map\": [\r\n            \"product-8\"\r\n        ],\r\n        \"accessible_purchase_map_flat\": \"product-8\",\r\n        \"fulfillment\": {\r\n            \"url\": \"https://orders.easyprwire.com/test/confirm/5f6d6b7467bd86d547a0f42ba1fe5f65d4d72e443483/\"\r\n        },\r\n        \"event_id\": \"1338138061\",\r\n        \"pro-rata\": \"false\"\r\n    }"
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/newsrooms/test-news",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "newsrooms", "test-news"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update News View",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "slug",
+              "value": "test-news",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/newsrooms/update-view",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "newsrooms", "update-view"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update News Docx",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "news_story_doc",
+              "type": "file",
+              "src": "/D:/Resume/f6cdd42e-7e8b-4834-8b3b-f9e8cc4d8386.pdf"
+            },
+            {
+              "key": "address",
+              "value": "Test Location, Nepal",
+              "description": "Optional",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/orders/35885716",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "orders", "35885716"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Faqs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/faqs",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "faqs"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Pricing Page Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/packages",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "packages"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Home Page Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/home-page",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "home-page"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Meta Tags",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/meta-tags/newsrooms",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "meta-tags", "newsrooms"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Layout Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/layout-data",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "layout-data"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get About Page Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/about-page",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "about-page"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Terms",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/policy/terms",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "policy", "terms"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Privacy Policy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/policy/privacy",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "policy", "privacy"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Refund Policy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/policy/refund",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "policy", "refund"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Contact Page Data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://api.easyprwire.com/api/contact-page",
+          "protocol": "https",
+          "host": ["api", "easyprwire", "com"],
+          "path": ["api", "contact-page"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Industry Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/industry/saas",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "industry", "saas"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Industries",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/all-industries",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "all-industries"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get PR Archives",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/pr-archives",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "pr-archives"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Press Release Page Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/api/press-release",
+          "host": ["{{baseURL}}"],
+          "path": ["api", "press-release"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Team",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "syI1WkSX3uJU2Re/Du+kmOs+R1nd0tp7rgwKPoF1gao=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"query\": \"sanjeetkazithapa@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.easyprwire.com/api/teams/verify",
+          "protocol": "https",
+          "host": ["api", "easyprwire", "com"],
+          "path": ["api", "teams", "verify"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    },
+    {
+      "key": "baseURL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

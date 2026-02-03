@@ -1,0 +1,31 @@
+name: EasyPR API Tests
+
+on:
+  push:
+    branches:
+      - main
+      - qa
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run API tests with Newman
+        run: |
+          npx newman run postman/collections/easypr.collection.json \
+            -e postman/environments/easypr.env.json
