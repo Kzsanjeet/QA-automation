@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # This downloads your GitHub repo into that Linux machine.
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -24,17 +25,21 @@ jobs:
         with:
           node-version: 18.18.0
 
+      # --legacy-peer-deps is needed because: Some packages fight with each other CI doesn’t like conflicts
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      # npm install cypress does NOT install the browser, So you must explicitly download it using binary.
       - name: Install Cypress Binary
         run: npx cypress install
 
+      # Before UI testing, confirm backend is healthy
       - name: Run API tests with Newman
         run: |
           npx newman run postman/collections/easypr.collection.json \
             -e postman/environments/easypr.env.json
 
+      # This is a quick smoke test to enusre whether my site is live or not
       - name: Check site availability
         run: curl -I https://easyprwire.com || exit 1
 

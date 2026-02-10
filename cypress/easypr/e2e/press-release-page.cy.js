@@ -1,6 +1,7 @@
 describe("press release page", () => {
   beforeEach(() => {
-    cy.visit("https://easyprwire.com/press-release-distribution");
+    cy.visit("https://test.easyprwire.com/press-release-distribution");
+    // cy.visit("http://localhost:3000/press-release-distribution");
   });
 
   it("should submit form and redirect to thank you page with id", () => {
